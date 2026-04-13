@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   // TAMBAH DATA KE SUPABASE
-  const addTransaction = async (e) => {
+  const addTransaction = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!desc || !amount) return;
 
@@ -77,7 +77,7 @@ export default function Home() {
   };
 
   // HAPUS DATA DARI SUPABASE
-  const deleteTransaction = async (id) => {
+  const deleteTransaction = async (id: number) => {
     const { error } = await supabase
       .from('transactions')
       .delete()
