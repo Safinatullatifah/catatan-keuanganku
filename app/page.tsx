@@ -100,7 +100,7 @@ export default function Home() {
     return tDate.getMonth() === currentMonth && tDate.getFullYear() === currentYear;
   });
 
-  const calculateBalance = (accType) => {
+  const calculateBalance = (accType: string) => {
     return transactions
       .filter(t => accType === 'All' || t.account === accType)
       .reduce((acc, t) => t.type === 'income' ? acc + t.amount : acc - t.amount, 0);
