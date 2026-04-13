@@ -10,7 +10,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard');
   
   // State Data
-  const [transactions, setTransactions] = useState([]);
+  const [transactions, setTransactions] = useState<any[]>([]);
   
   // State Form
   const [desc, setDesc] = useState('');
