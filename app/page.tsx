@@ -208,7 +208,7 @@ export default function Home() {
                     <input type="text" required placeholder="Keterangan" className="w-full p-4 bg-slate-50 rounded-2xl outline-none focus:ring-4 focus:ring-pink-100 transition-all text-sm font-medium" value={desc} onChange={(e) => setDesc(e.target.value)} />
                     <input type="number" required placeholder="Nominal" className="w-full p-4 bg-slate-50 rounded-2xl outline-none focus:ring-4 focus:ring-pink-100 text-sm font-medium" value={amount} onChange={(e) => setAmount(e.target.value)} />
                     <select className="w-full p-4 bg-slate-50 rounded-2xl outline-none text-sm font-medium text-slate-600" value={category} onChange={(e) => setCategory(e.target.value)}>
-                      {categories[type].map(cat => <option key={cat} value={cat}>{cat}</option>)}
+                      {(categories as any)[type].map((cat: string) => <option key={cat} value={cat}>{cat}</option>)}
                     </select>
                     <button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 rounded-2xl shadow-lg shadow-pink-200"> Simpan Ke Cloud </button>
                   </form>
